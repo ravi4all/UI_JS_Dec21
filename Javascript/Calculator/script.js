@@ -6,6 +6,9 @@ function bindEvents() {
     var divBtn = document.querySelector("#div");
     var mulBtn = document.querySelector("#mul");
 
+    resultBox = document.querySelector("#res");
+    resultBox.setAttribute('readonly',true);
+
     addBtn.addEventListener("click", add);
     subBtn.addEventListener("click", sub);
     divBtn.addEventListener("click", div);
@@ -18,7 +21,8 @@ function add() {
     // we need to perform type casting
     // convert one type of data into another
     var result = parseInt(fnum) + parseInt(snum);
-    console.log(result);
+    resultBox.value = result;
+    // console.log(result);
 }
 
 function sub() {
@@ -27,7 +31,8 @@ function sub() {
     // we need to perform type casting
     // convert one type of data into another
     var result = parseInt(fnum) - parseInt(snum);
-    console.log(result);
+    resultBox.value = result;
+    // console.log(result);
 }
 
 function div() {
@@ -36,7 +41,8 @@ function div() {
     // we need to perform type casting
     // convert one type of data into another
     var result = parseInt(fnum) / parseInt(snum);
-    console.log(result);
+    resultBox.value = result;
+    // console.log(result);
 }
 
 function mul() {
@@ -45,5 +51,6 @@ function mul() {
     // we need to perform type casting
     // convert one type of data into another
     var result = parseInt(fnum) * parseInt(snum);
-    console.log(result);
+    resultBox.value = result;
+    // console.log(result);
 }
