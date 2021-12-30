@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Change Event</h1>
+
+    <form action="#">
+        <table>
+            <tr>
+                <td>Enter your name</td>
+                <td>
+                    <input type="text" id="box_1" onchange="validate(this)" placeholder="Enter your name">
+                </td>
+                <td>
+                    <span id="err_1"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter your email</td>
+                <td>
+                    <input type="email" onchange="validate(this)" placeholder="Enter your email">
+                </td>
+                <td>
+                    <span id="err_2"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter your password</td>
+                <td>
+                    <input type="password" id="box_3" onchange="validate(this)" placeholder="Enter your password">
+                </td>
+                <td>
+                    <span id="err_3"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Passoword</td>
+                <td>
+                    <input type="password" placeholder="Confirm password" onblur="validatePassword(this)">
+                </td>
+                <td>
+                    <span id="err_4"></span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <script>
+        function validate(obj) {
+            // var textbox = document.querySelector("#box_1");
+            // if(textbox.value == "") {
+            //     alert("Please fill your name...");
+            // }
+            box = obj;
+            // var errMsg = document.querySelector("#err_1");
+            // var errMsg = document.querySelector("#err_2");
+            // var errMsg = document.querySelector("#err_3");
+            // var errMsg = document.querySelector("#err_4");
+            
+            var errMsg = box.parentElement.parentElement.children[2].children[0];
+            // console.log(box);
+            if(box.value == "") {
+                // alert("Please fill this field...");
+                box.style.border = "1px solid red";
+                errMsg.innerHTML = "Please fill this field...";
+            }
+            else {
+                box.style.border = "1px solid green";
+                errMsg.innerHTML = "";
+            }
+        }
+
+        function validatePassword(obj) {
+            var password_1 = document.querySelector("#box_3").value;
+            var password_2 = obj.value;
+            var span = document.querySelector("#err_4");
+            if(password_1 != password_2) {
+                span.innerHTML = "Password do not match...";
+            }
+            else {
+                span.innerHTML = "Password match...";
+            }
+        }
+    </script>
+</body>
+</html>

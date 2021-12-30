@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Blur Event</h1>
+
+    <form action="#">
+        <table>
+            <tr>
+                <td>Enter your name</td>
+                <td>
+                    <input type="text" id="box_1" onblur="validate(this)" placeholder="Enter your name">
+                </td>
+            </tr>
+            <tr>
+                <td>Enter your email</td>
+                <td>
+                    <input type="email" onblur="validate(this)" placeholder="Enter your email">
+                </td>
+            </tr>
+            <tr>
+                <td>Enter your password</td>
+                <td>
+                    <input type="password" onblur="validate(this)" placeholder="Enter your password">
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Passoword</td>
+                <td>
+                    <input type="password" placeholder="Confirm password">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <script>
+        function validate(obj) {
+            // var textbox = document.querySelector("#box_1");
+            // if(textbox.value == "") {
+            //     alert("Please fill your name...");
+            // }
+            var box = obj;
+            console.log(box);
+            if(box.value == "") {
+                // alert("Please fill this field...");
+                box.style.border = "1px solid red";
+            }
+            else {
+                box.style.border = "1px solid green";
+            }
+        }
+    </script>
+</body>
+</html>
