@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>KeyEvents</h1>
+
+    <!-- <input type="text" onkeypress="showName(this)"> 
+    <span id="msg"></span> -->
+
+    <!-- <input type="text" onkeydown="showName(this)"> 
+    <span id="msg"></span> -->
+
+    <input type="text" onkeyup="showName(this)"> 
+    <span id="msg"></span>
+    
+    <script>
+        function showName(object) {
+            // alert("You pressed a key...");
+            var span = document.querySelector("#msg");
+            console.log(object.value);
+            span.innerHTML = object.value;
+        }
+    </script>
+</body>
+</html>

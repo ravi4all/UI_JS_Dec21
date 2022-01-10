@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 2px solid red;
+            width: 200px;
+            height: 300px;
+        }
+        img {
+            width: 100%;
+            height: inherit;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mouse Events</h1>
+
+    <div onmouseenter="changeImage(this)" onmouseleave="changeImage2(this)">
+        <img src="https://m-cdn.phonearena.com/images/phones/81062-940/Apple-iPhone-12-mini.jpg" alt="">
+
+        <!-- <img src="https://cdn.shopify.com/s/files/1/0302/8965/7949/products/apple-silicone-apple-iphone-12-12-pro-apple-etuis-16796369715293_1024x1024@2x.jpg?v=1615818504" alt=""> -->
+    </div>
+
+    <script>
+        function changeImage(obj) {
+            obj.innerHTML = '<img src="https://cdn.shopify.com/s/files/1/0302/8965/7949/products/apple-silicone-apple-iphone-12-12-pro-apple-etuis-16796369715293_1024x1024@2x.jpg?v=1615818504" alt="">';
+            console.log("Mouse Enter...");
+        }
+
+        function changeImage2(obj) {
+            obj.innerHTML = '<img src="https://m-cdn.phonearena.com/images/phones/81062-940/Apple-iPhone-12-mini.jpg" alt="">';
+            console.log("Mouse Leave...");
+        }
+    </script>
+    
+</body>
+</html>
