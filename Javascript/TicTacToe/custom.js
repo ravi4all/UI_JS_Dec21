@@ -72,5 +72,11 @@ function checkWinner(choice, pos) {
     }
 
     // Write loop to check winner
+    for(var i = 0; i < winning_combinations.length; i++) {
+        if(winning_combinations[i][0] == choice && winning_combinations[i][1] == choice && winning_combinations[i][2] == choice) {
+            console.log(choice + " wins");
+            break;
+        }
+    }
 
 }
