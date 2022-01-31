@@ -14,8 +14,30 @@ a {
 .products {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .products li {
-    width: 22%;
-    margin: 0px 10px;
+    width: 24%;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 50px;
+    background-color: #fff;
+    padding: 10px 20px;
+    transition: 0.5s;
+    box-shadow: 10px 10px 10px 0px #b1b1b1;
+}
+
+.products .img-wrapper {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.products li h6 {
+    font-size: 18px;
+    margin-top: 10px;
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis;  
 }
