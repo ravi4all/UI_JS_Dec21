@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>AJAX Need</h1>
+
+    <script>
+        window.addEventListener("load", loadFunctions);
+        function loadFunctions() {
+            setTimeout(function() {
+                one(); // this will be called after 3 seconds
+            }, 3000)
+            two();
+            three();
+        }
+        function one() {
+            for(var i = 0; i < 10000000000; i++) {
+                var j = i + 10;
+            }
+            console.log("One Executed...");
+        }
+
+        function two() {
+            console.log("Two Executed...");
+        }
+
+        function three() {
+            console.log("Three Executed...");
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>AJAX Demo</h1>
+
+    <button onclick="loadData()">Load Data</button>
+
+    <h2 id="output">Temprature is : </h2>
+    
+    <script>
+        function loadData() {
+            var url = "https://api.openweathermap.org/data/2.5/weather?lat=28.7041&lon=77.1025&appid=83e01e3dce5d28839bb5a177cb51af12"
+            var xhttp = new XMLHttpRequest();
+            // when ready state will change, do something
+            xhttp.onreadystatechange = function() {
+                // 0: request not initialized
+                // 1: server connection established
+                // 2: request received
+                // 3: processing request
+                // 4: request finished and response is ready
+                // console.log(xhttp.readyState);
+
+                // 200: "OK"
+                // 403: "Forbidden"
+                // 404: "Page not found"
+                // console.log(xhttp.status);
+                if(xhttp.readyState == 4 && xhttp.status == 200) {
+                    var data = this.responseText;
+                    // console.log(data);
+                    data = JSON.parse(data);
+                    var temp = data.main.temp;
+                    temp = temp - 273.15;
+                    document.querySelector("#output").innerHTML += temp;
+                }
+            }
+            // get / post
+            xhttp.open('get', url);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>
